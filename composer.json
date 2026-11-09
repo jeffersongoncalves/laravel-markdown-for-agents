@@ -1,0 +1,73 @@
+{
+    "name": "jeffersongoncalves/laravel-markdown-for-agents",
+    "description": "Markdown for AI agents in Laravel: requests with Accept: text/markdown get the page's main content as clean Markdown (title/url front matter, optional Content-Signal header), while browsers keep the HTML. An origin-side equivalent of Cloudflare's Markdown for Agents.",
+    "keywords": [
+        "jeffersongoncalves",
+        "laravel",
+        "laravel-markdown-for-agents",
+        "markdown",
+        "ai-agents",
+        "llm",
+        "content-negotiation",
+        "content-signals"
+    ],
+    "homepage": "https://github.com/jeffersongoncalves/laravel-markdown-for-agents",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Gonçalves",
+            "email": "gerson.simao.92@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "illuminate/contracts": "^11.0|^12.0|^13.0",
+        "illuminate/http": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "league/html-to-markdown": "^5.1",
+        "spatie/laravel-package-tools": "^1.14"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.7.4|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JeffersonGoncalves\\MarkdownForAgents\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JeffersonGoncalves\\MarkdownForAgents\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JeffersonGoncalves\\MarkdownForAgents\\MarkdownForAgentsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
